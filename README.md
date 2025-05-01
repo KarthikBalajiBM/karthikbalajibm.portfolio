@@ -20,7 +20,7 @@ A modern, responsive portfolio website built with Flask and a clean, eye-catchin
 
 1. Clone the repository:
 ```
-git clone https://github.com/yourusername/karthik-portfolio.git
+git clone https://github.com/KarthikBalajiBM/karthikbalajibm.portfolio.git
 cd karthik-portfolio
 ```
 
