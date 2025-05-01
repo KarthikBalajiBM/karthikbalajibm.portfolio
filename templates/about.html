@@ -70,6 +70,41 @@
         margin-top: 2rem;
     }
     
+    /* Responsive styles for mobile */
+    @media (max-width: 768px) {
+        .skills-grid {
+            grid-template-columns: repeat(1, 1fr);
+            gap: 1rem;
+        }
+        
+        .bio-text {
+            padding: 0 10px;
+            text-align: left;
+        }
+        
+        .bio-text p {
+            text-align: left;
+        }
+        
+        .skill-tag {
+            font-size: 0.8rem;
+            padding: 0.3rem 0.6rem;
+            margin: 0.2rem;
+        }
+    }
+    
+    /* Additional responsive adjustments for very small screens */
+    @media (max-width: 480px) {
+        .profile-image {
+            width: 150px;
+            height: 150px;
+        }
+        
+        .section-title {
+            font-size: 1.5rem;
+        }
+    }
+    
     .skill-card {
         background-color: #fff;
         border-radius: 10px;
