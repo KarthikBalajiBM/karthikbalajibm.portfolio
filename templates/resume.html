@@ -10,11 +10,25 @@
         <p class="section-subtitle">My professional background and qualifications</p>
     </div>
     
-    <!-- Download Button -->
+    <!-- Download Buttons -->
     <div style="text-align: center; margin: 40px 0;">
-        <a href="/static/files/Resume_Karthik_Balaji_B_M.pdf" class="btn btn-primary" style="font-size: 1.4rem; padding: 15px 40px; background-color: #444; border: none; box-shadow: 0 4px 8px rgba(0,0,0,0.2); transition: all 0.3s ease;" download="Karthik_Balaji_Resume.pdf">
+        <!-- Primary download button (using download attribute) -->
+        <a href="/static/files/Resume_Karthik_Balaji_B_M.pdf" class="btn btn-primary" style="font-size: 1.4rem; padding: 15px 40px; background-color: #444; border: none; box-shadow: 0 4px 8px rgba(0,0,0,0.2); transition: all 0.3s ease; margin-bottom: 15px; display: inline-block;" download="Karthik_Balaji_Resume.pdf" id="primary-download">
             <i class="fas fa-download" style="margin-right: 10px;"></i> Download Resume PDF
         </a>
+        
+        <!-- Fallback for mobile devices -->
+        <div style="margin-top: 10px; font-size: 0.9rem; color: #666;">
+            <p>If download doesn't start automatically, try these options:</p>
+            <div style="margin-top: 15px;">
+                <a href="/download-resume" class="btn" style="font-size: 1rem; padding: 10px 20px; background-color: #555; color: white; border: none; border-radius: 4px; margin: 0 5px; display: inline-block;">
+                    <i class="fas fa-file-download" style="margin-right: 5px;"></i> Download (Option 1)
+                </a>
+                <a href="/static/files/Resume_Karthik_Balaji_B_M.pdf" target="_blank" class="btn" style="font-size: 1rem; padding: 10px 20px; background-color: #555; color: white; border: none; border-radius: 4px; margin: 0 5px; display: inline-block;">
+                    <i class="fas fa-external-link-alt" style="margin-right: 5px;"></i> Open in Browser
+                </a>
+            </div>
+        </div>
     </div>
 </section>
 {% endblock %}
