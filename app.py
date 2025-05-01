@@ -44,16 +44,8 @@ def projects():
     portfolio_data = load_portfolio_data()
     return render_template('projects.html', data=portfolio_data)
 
-@app.route('/contact', methods=['GET', 'POST'])
+@app.route('/contact')
 def contact():
-    if request.method == 'POST':
-        # Handle contact form submission
-        name = request.form.get('name')
-        email = request.form.get('email')
-        message = request.form.get('message')
-        # In a real application, you would save this to a database or send an email
-        return jsonify({"success": True, "message": "Message sent successfully!"})
-    
     portfolio_data = load_portfolio_data()
     return render_template('contact.html', data=portfolio_data)
 
@@ -64,13 +56,29 @@ def resume():
 
 @app.route('/download-resume')
 def download_resume():
-    # Path to the resume file
-    resume_path = os.path.join(os.path.dirname(__file__), 'static', 'files', 'Karthik_Balaji_Resume.pdf')
-    # Check if the file exists, if not, return a 404
-    if not os.path.exists(resume_path):
-        return "Resume file not found", 404
-    # Return the file as an attachment
-    return send_file(resume_path, as_attachment=True, download_name='Karthik_Balaji_Resume.pdf')
+    # Try different resume file locations in order
+    resume_files = [
+        os.path.join(os.path.dirname(__file__), 'static', 'files', 'Resume_Karthik_Balaji_B_M.pdf'),
+        os.path.join(os.path.dirname(__file__), 'static', 'files', 'Karthik_Balaji_Resume.pdf')
+    ]
+    
+    # Try each resume file location
+    for resume_path in resume_files:
+        if os.path.exists(resume_path):
+            try:
+                return send_file(
+                    resume_path,
+                    as_attachment=True,
+                    download_name='Karthik_Balaji_Resume.pdf',
+                    mimetype='application/pdf'
+                )
+            except Exception as e:
+                print(f"Error sending file: {e}")
+                return f"Error downloading resume: {str(e)}", 500
+    
+    # If no resume file is found
+    print("Resume file not found in any of the expected locations")
+    return "Resume file not found", 404
 
 if __name__ == '__main__':
     # Create data directory if it doesn't exist

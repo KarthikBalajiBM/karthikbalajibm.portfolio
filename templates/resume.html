@@ -10,9 +10,9 @@
         <p class="section-subtitle">My professional background and qualifications</p>
     </div>
     
-    <!-- Single Download Button -->
+    <!-- Download Button -->
     <div style="text-align: center; margin: 40px 0;">
-        <a href="/download-resume" class="btn btn-primary" style="font-size: 1.4rem; padding: 15px 40px; background-color: #444; border: none; box-shadow: 0 4px 8px rgba(0,0,0,0.2); transition: all 0.3s ease;">
+        <a href="/static/files/Resume_Karthik_Balaji_B_M.pdf" class="btn btn-primary" style="font-size: 1.4rem; padding: 15px 40px; background-color: #444; border: none; box-shadow: 0 4px 8px rgba(0,0,0,0.2); transition: all 0.3s ease;" download="Karthik_Balaji_Resume.pdf">
             <i class="fas fa-download" style="margin-right: 10px;"></i> Download Resume PDF
         </a>
     </div>
@@ -22,13 +22,6 @@
 {% block extra_js %}
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-        // Download resume functionality
-        document.getElementById('download-resume').addEventListener('click', function(e) {
-            e.preventDefault();
-            // In a real application, this would point to an actual PDF file
-            alert('In a production environment, this would download your resume PDF.');
-        });
-        
         // Animation for elements when they come into view
         const observerOptions = {
             threshold: 0.1
