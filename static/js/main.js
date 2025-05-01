@@ -48,12 +48,28 @@ function initMobileMenu() {
                 const mobileNav = document.createElement('div');
                 mobileNav.className = 'mobile-nav';
                 
+                // Create header with close button
+                const header = document.createElement('div');
+                header.className = 'mobile-nav-header';
+                
+                const closeBtn = document.createElement('button');
+                closeBtn.className = 'close-btn';
+                closeBtn.innerHTML = '&times;';
+                closeBtn.addEventListener('click', () => {
+                    closeMobileMenu();
+                });
+                
+                header.appendChild(closeBtn);
+                mobileNav.appendChild(header);
+                
                 // Clone the nav list
-                const navClone = navList.cloneNode(true);
-                mobileNav.appendChild(navClone);
+                const clonedNavList = navList.cloneNode(true);
+                mobileNav.appendChild(clonedNavList);
                 
                 // Add to body
                 document.body.appendChild(mobileNav);
+                
+                // Prevent scrolling
                 document.body.style.overflow = 'hidden';
                 
                 // Animate in
