@@ -1,0 +1,110 @@
+{
+  "name": "Karthik Balaji B M",
+  "title": "IT Student & Software Engineer",
+  "about": "Passionate IT student with expertise in secure systems design and algorithm development. Skilled in Python, C, and data-driven solutions that address real-world challenges.",
+  "resumeFile": "static/files/Karthik_Balaji_Resume.pdf",
+  "skills": [
+    {
+      "category": "Programming Languages & Libraries",
+      "items": ["Python", "C", "SQL", "Java", "NumPy", "Pandas", "Matplotlib"]
+    },
+    {
+      "category": "Tools & Software",
+      "items": ["GitHub", "VS Code", "Figma", "Colab", "PyCharm"]
+    },
+    {
+      "category": "Technical Expertise",
+      "items": ["Data Structures and Algorithms", "Object-Oriented Programming (OOPs)"]
+    },
+    {
+      "category": "Soft Skills",
+      "items": ["Solution-Oriented", "Critical Thinking", "Adaptability", "Emotional Intelligence"]
+    }
+  ],
+  "experience": [
+    {
+      "title": "Website Data Management Intern",
+      "company": "Green Tamil Nadu Mission - Tamil Nadu Forest Department",
+      "duration": "Apr 2023 - May 2023",
+      "description": "Created user documentation that reduced support queries by 30%. Optimized data processes and developed engaging infographics that improved stakeholder communication."
+    }
+  ],
+  "education": [
+    {
+      "degree": "Bachelor of Technology in Information Technology (IT)",
+      "institution": "Sri Sairam Engineering College",
+      "year": "July 2021 - Present",
+      "description": "CGPA: 7.69"
+    }
+  ],
+  "projects": [
+    {
+      "title": "Senti-Meter: Emotion-Based Music Recommendation System",
+      "description": "Developed a real-time emotion detection system using facial recognition that recommends music based on user's emotional state. Implemented with OpenCV, TensorFlow, and Spotify API.",
+      "technologies": ["Python", "OpenCV", "TensorFlow", "Spotify API"],
+      "github": "https://github.com/KarthikBalajiBM/Emotion-Based-Music-Recommendation"
+    },
+    {
+      "title": "Armour-E-Vault: Secure Password Management System",
+      "description": "Created a secure password manager with AES-256 encryption, two-factor authentication, and intuitive UI. Features include password generation, strength analysis, and secure cloud backup.",
+      "technologies": ["Python", "Cryptography", "Tkinter", "SQLite"],
+      "github": "https://github.com/KarthikBalajiBM/Armour-E-Vault"
+    },
+    {
+      "title": "Know-the-Weather: Real-Time Weather Forecasting Web Application",
+      "description": "Responsive weather app built with React.js that displays real-time forecasts using OpenWeatherMap API. Features reusable components and efficient API integration.",
+      "technologies": ["React.js", "OpenWeatherMap API", "CSS"],
+      "github": "https://github.com/KarthikBalajiBM/Know-the-weather"
+    },
+    {
+      "title": "Autonomous Network Security Monitoring System",
+      "description": "Developed an automated security system that monitors network traffic, detects potential threats, and implements defensive measures without human intervention.",
+      "technologies": ["Python", "Network Security", "Machine Learning", "Intrusion Detection"],
+      "github": "https://github.com/KarthikBalajiBM/Autonomous-Network-Security-Monitoring-System"
+    },
+    {
+      "title": "AI Gloom Investigator",
+      "description": "Created an AI-powered tool that analyzes and investigates patterns of depression in text data, helping to identify early warning signs of mental health issues.",
+      "technologies": ["Python", "NLP", "Machine Learning", "Mental Health"],
+      "github": "https://github.com/KarthikBalajiBM/AI-Gloom-Investigator"
+    },
+    {
+      "title": "Sudoku Solver",
+      "description": "Built an efficient Sudoku puzzle solver using backtracking algorithms that can solve even the most challenging puzzles in seconds.",
+      "technologies": ["Python", "Algorithms", "Backtracking"],
+      "github": "https://github.com/KarthikBalajiBM/Sudoku-Solver"
+    },
+    {
+      "title": "Snake Game",
+      "description": "Recreated the classic Snake game with Python, featuring increasing difficulty levels, score tracking, and customizable game elements.",
+      "technologies": ["Python", "Pygame", "Game Development"],
+      "github": "https://github.com/KarthikBalajiBM/Snake-Game-using-python"
+    },
+    {
+      "title": "Bat To-Do List",
+      "description": "Designed a Batman-themed task management application with priority levels, deadlines, and progress tracking features.",
+      "technologies": ["JavaScript", "HTML/CSS", "Local Storage"],
+      "github": "https://github.com/KarthikBalajiBM/Bat-To-Do-List"
+    }
+  ],
+  "achievements": [
+    "Elite Performer Award for technical excellence",
+    "400+ LeetCode problems solved",
+    "Winner, Infoculture Fiesta (100+ participants)",
+    "Top ranks in national coding symposiums",
+    "Yukthi CTF 2024 competitor",
+    "Finalist, Can-fig Web Design Contest"
+  ],
+  "certifications": [
+    "Google Intro to Large Language Models",
+    "IBM Python for Data Science",
+    "Cisco Introduction to Cybersecurity"
+  ],
+  "contact": {
+    "email": "karthikbalajibm@gmail.com",
+    "phone": "+91 6382481081",
+    "linkedin": "https://www.linkedin.com/in/karthik-balaji-b-m",
+    "github": "https://github.com/KarthikBalajiBM",
+    "leetcode": "https://leetcode.com/karthikbalajibm/"
+  }
+}

@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block title %}Resume - Karthik Balaji{% endblock %}
+
+{% block content %}
+<section class="resume-section">
+    <div class="section-header">
+        <h1>Resume</h1>
+        <div class="section-divider"></div>
+        <p class="section-subtitle">My professional background and qualifications</p>
+    </div>
+    
+    <!-- Single Download Button -->
+    <div style="text-align: center; margin: 40px 0;">
+        <a href="/download-resume" class="btn btn-primary" style="font-size: 1.4rem; padding: 15px 40px; background-color: #444; border: none; box-shadow: 0 4px 8px rgba(0,0,0,0.2); transition: all 0.3s ease;">
+            <i class="fas fa-download" style="margin-right: 10px;"></i> Download Resume PDF
+        </a>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Download resume functionality
+        document.getElementById('download-resume').addEventListener('click', function(e) {
+            e.preventDefault();
+            // In a real application, this would point to an actual PDF file
+            alert('In a production environment, this would download your resume PDF.');
+        });
+        
+        // Animation for elements when they come into view
+        const observerOptions = {
+            threshold: 0.1
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('in-view');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll('.resume-item, .resume-skill-category, .section-header').forEach(el => {
+            observer.observe(el);
+        });
+    });
+</script>
+{% endblock %}

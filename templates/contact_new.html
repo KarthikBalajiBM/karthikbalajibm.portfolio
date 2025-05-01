@@ -1,0 +1,449 @@
+{% extends "base.html" %}
+
+{% block title %}Contact - Karthik Balaji{% endblock %}
+
+{% block extra_css %}
+<style>
+    /* Contact page styling */
+    .contact-container {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 2rem 1rem;
+    }
+    
+    .page-header {
+        text-align: center;
+        margin-bottom: 3rem;
+        position: relative;
+    }
+    
+    .page-header h1 {
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+        color: #333;
+    }
+    
+    .page-header .subtitle {
+        font-size: 1.1rem;
+        color: #666;
+        margin-bottom: 1.5rem;
+    }
+    
+    .page-header::after {
+        content: '';
+        position: absolute;
+        bottom: -15px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 3px;
+        background: linear-gradient(to right, #444, #888);
+    }
+    
+    /* Two-column layout */
+    .contact-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+        margin-top: 3rem;
+    }
+    
+    @media (max-width: 768px) {
+        .contact-content {
+            grid-template-columns: 1fr;
+        }
+    }
+    
+    /* Social profiles section */
+    .profiles-section {
+        margin-bottom: 2rem;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+        margin-bottom: 1.5rem;
+        color: #333;
+        position: relative;
+        padding-bottom: 0.8rem;
+    }
+    
+    .section-title::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 60px;
+        height: 3px;
+        background: linear-gradient(to right, #444, #888);
+    }
+    
+    .profiles-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+    
+    .profile-card {
+        background-color: white;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        transition: transform 0.3s, box-shadow 0.3s;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+    
+    .profile-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+    
+    .profile-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 4px;
+    }
+    
+    .profile-card.email::before { background: linear-gradient(to bottom, #D64541, #F1A9A0); }
+    .profile-card.phone::before { background: linear-gradient(to bottom, #26A65B, #87D37C); }
+    .profile-card.linkedin::before { background: linear-gradient(to bottom, #1F3A93, #5C97BF); }
+    .profile-card.github::before { background: linear-gradient(to bottom, #663399, #BE90D4); }
+    .profile-card.leetcode::before { background: linear-gradient(to bottom, #F89406, #F9BF3B); }
+    
+    .profile-content {
+        padding: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        flex-grow: 1;
+    }
+    
+    .profile-icon {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        width: 70px;
+        height: 70px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        color: white;
+    }
+    
+    .profile-icon.email { background: linear-gradient(135deg, #D64541, #F1A9A0); }
+    .profile-icon.phone { background: linear-gradient(135deg, #26A65B, #87D37C); }
+    .profile-icon.linkedin { background: linear-gradient(135deg, #1F3A93, #5C97BF); }
+    .profile-icon.github { background: linear-gradient(135deg, #663399, #BE90D4); }
+    .profile-icon.leetcode { background: linear-gradient(135deg, #F89406, #F9BF3B); }
+    
+    .profile-title {
+        font-size: 1.3rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+        color: #333;
+    }
+    
+    .profile-value {
+        font-size: 1rem;
+        color: #666;
+        margin-bottom: 1rem;
+        word-break: break-word;
+    }
+    
+    .profile-link {
+        display: inline-block;
+        padding: 0.6rem 1.2rem;
+        background-color: #f5f5f5;
+        color: #444;
+        border-radius: 50px;
+        text-decoration: none;
+        transition: all 0.3s;
+        font-weight: 500;
+        font-size: 0.9rem;
+    }
+    
+    .profile-link:hover {
+        background-color: #444;
+        color: white;
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    
+    /* Contact form */
+    .form-section {
+        background-color: white;
+        border-radius: 10px;
+        padding: 2rem;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    }
+    
+    .contact-form {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    
+    .form-group {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .form-group label {
+        margin-bottom: 0.5rem;
+        font-weight: 500;
+        color: #444;
+    }
+    
+    .form-group input,
+    .form-group textarea {
+        padding: 0.8rem;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        font-family: inherit;
+        font-size: 1rem;
+        transition: border-color 0.3s;
+    }
+    
+    .form-group input:focus,
+    .form-group textarea:focus {
+        outline: none;
+        border-color: #555;
+    }
+    
+    .form-submit {
+        display: inline-block;
+        padding: 0.8rem 2rem;
+        background-color: #444;
+        color: white;
+        border: none;
+        border-radius: 50px;
+        cursor: pointer;
+        font-family: inherit;
+        font-weight: 500;
+        font-size: 1rem;
+        transition: all 0.3s;
+        align-self: flex-start;
+    }
+    
+    .form-submit:hover {
+        background-color: #333;
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    
+    /* Location section */
+    .location-section {
+        margin-top: 4rem;
+        text-align: center;
+    }
+    
+    .map-container {
+        margin-top: 2rem;
+        background-color: white;
+        border-radius: 10px;
+        padding: 2rem;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    }
+    
+    .map-placeholder {
+        padding: 3rem 0;
+        color: #555;
+    }
+    
+    .map-placeholder i {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        color: #D64541;
+    }
+    
+    .map-placeholder p {
+        font-size: 1.2rem;
+        font-weight: 500;
+    }
+    
+    /* Animation for elements */
+    .fade-in {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+    
+    .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="contact-container">
+    <!-- Page Header -->
+    <header class="page-header fade-in">
+        <h1>Get In Touch</h1>
+        <p class="subtitle">Feel free to reach out for collaborations or just a friendly chat</p>
+    </header>
+    
+    <!-- Contact Content -->
+    <div class="contact-content">
+        <!-- Social Profiles Section -->
+        <div class="profiles-section fade-in">
+            <h2 class="section-title">Connect With Me</h2>
+            <div class="profiles-grid">
+                <!-- Email -->
+                <div class="profile-card email fade-in">
+                    <div class="profile-content">
+                        <div class="profile-icon email">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h3 class="profile-title">Email</h3>
+                        <p class="profile-value">{{ data.contact.email }}</p>
+                        <a href="mailto:{{ data.contact.email }}" class="profile-link">Send Email</a>
+                    </div>
+                </div>
+                
+                <!-- Phone -->
+                <div class="profile-card phone fade-in">
+                    <div class="profile-content">
+                        <div class="profile-icon phone">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <h3 class="profile-title">Phone</h3>
+                        <p class="profile-value">{{ data.contact.phone }}</p>
+                        <a href="tel:{{ data.contact.phone }}" class="profile-link">Call Me</a>
+                    </div>
+                </div>
+                
+                <!-- LinkedIn -->
+                <div class="profile-card linkedin fade-in">
+                    <div class="profile-content">
+                        <div class="profile-icon linkedin">
+                            <i class="fab fa-linkedin-in"></i>
+                        </div>
+                        <h3 class="profile-title">LinkedIn</h3>
+                        <p class="profile-value">Karthik Balaji B M</p>
+                        <a href="{{ data.contact.linkedin }}" target="_blank" class="profile-link">Connect</a>
+                    </div>
+                </div>
+                
+                <!-- GitHub -->
+                <div class="profile-card github fade-in">
+                    <div class="profile-content">
+                        <div class="profile-icon github">
+                            <i class="fab fa-github"></i>
+                        </div>
+                        <h3 class="profile-title">GitHub</h3>
+                        <p class="profile-value">KarthikBalajiBM</p>
+                        <a href="{{ data.contact.github }}" target="_blank" class="profile-link">View Projects</a>
+                    </div>
+                </div>
+                
+                <!-- LeetCode -->
+                <div class="profile-card leetcode fade-in">
+                    <div class="profile-content">
+                        <div class="profile-icon leetcode">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h3 class="profile-title">LeetCode</h3>
+                        <p class="profile-value">500+ Problems Solved</p>
+                        <a href="{{ data.contact.leetcode }}" target="_blank" class="profile-link">View Profile</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Contact Form Section -->
+        <div class="form-section fade-in">
+            <h2 class="section-title">Send Me a Message</h2>
+            <form class="contact-form" action="#" method="post" id="contact-form">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <input type="text" id="subject" name="subject" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                
+                <button type="submit" class="form-submit">Send Message</button>
+            </form>
+        </div>
+    </div>
+    
+    <!-- Location Section -->
+    <section class="location-section fade-in">
+        <h2 class="section-title" style="text-align: center; display: inline-block; margin-bottom: 2rem;">My Location</h2>
+        <div class="map-container">
+            <div class="map-placeholder">
+                <i class="fas fa-map-marker-alt"></i>
+                <p>Chennai, Tamil Nadu, India</p>
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Form submission handling
+        const contactForm = document.getElementById('contact-form');
+        
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Get form data
+                const formData = new FormData(contactForm);
+                const formDataObj = {};
+                formData.forEach((value, key) => {
+                    formDataObj[key] = value;
+                });
+                
+                // In a real application, this would send the data to the server
+                // For now, just show a success message
+                alert('Thank you for your message! In a production environment, this would be sent to the server.');
+                contactForm.reset();
+            });
+        }
+        
+        // Fade-in animation for elements
+        const fadeElements = document.querySelectorAll('.fade-in');
+        
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+        
+        fadeElements.forEach(element => {
+            observer.observe(element);
+        });
+    });
+</script>
+{% endblock %}

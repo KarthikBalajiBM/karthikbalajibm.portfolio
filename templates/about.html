@@ -1,0 +1,284 @@
+{% extends "base.html" %}
+
+{% block title %}About - Karthik Balaji{% endblock %}
+
+{% block extra_css %}
+<style>
+    /* About page styling */
+    .about-container {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 2rem 1rem;
+    }
+    
+    .profile-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 3rem;
+        position: relative;
+        padding-bottom: 2rem;
+    }
+    
+    .profile-section::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 25%;
+        width: 50%;
+        height: 1px;
+        background: linear-gradient(to right, transparent, #555, transparent);
+    }
+    
+    .profile-image {
+        width: 180px;
+        height: 180px;
+        border-radius: 50%;
+        overflow: hidden;
+        margin-bottom: 1.5rem;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        border: 4px solid #fff;
+    }
+    
+    .profile-img-about {
+        width: 100%;
+        height: 100%;
+    }
+    
+    .bio-text {
+        max-width: 700px;
+        text-align: center;
+        line-height: 1.8;
+        color: #444;
+    }
+    
+    .bio-text p {
+        margin-bottom: 1rem;
+    }
+    
+    .bio-text p.lead {
+        font-size: 1.1rem;
+        font-weight: 500;
+        color: #333;
+    }
+    
+    /* Skills grid styling */
+    .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+        margin-top: 2rem;
+    }
+    
+    .skill-card {
+        background-color: #fff;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+    
+    .skill-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+    
+    .skill-header {
+        padding: 1rem;
+        background-color: #f8f8f8;
+        border-bottom: 1px solid #eee;
+        text-align: center;
+    }
+    
+    .skill-header h4 {
+        margin: 0;
+        color: #333;
+        font-weight: 600;
+    }
+    
+    .skill-body {
+        padding: 1.5rem;
+        text-align: center;
+    }
+    
+    .skill-tag {
+        display: inline-block;
+        background-color: #555;
+        color: white;
+        padding: 0.4rem 0.8rem;
+        border-radius: 50px;
+        margin: 0.3rem;
+        font-size: 0.85rem;
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+    
+    .skill-tag:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+        cursor: pointer;
+    }
+    
+    .section-title {
+        text-align: center;
+        margin-bottom: 2.5rem;
+        position: relative;
+        padding-bottom: 1rem;
+    }
+    
+    .section-title::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 3px;
+        background: linear-gradient(to right, #444, #888);
+    }
+    
+    .cert-list {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+    
+    .cert-list li {
+        padding: 0.5rem 0;
+        border-bottom: 1px solid #eee;
+    }
+    
+    .cert-list li:last-child {
+        border-bottom: none;
+    }
+    
+    .about-buttons {
+        margin-top: 3rem;
+        text-align: center;
+    }
+    
+    .about-buttons a {
+        display: inline-block;
+        margin: 0 0.5rem;
+        padding: 0.8rem 2rem;
+        background-color: #444;
+        color: white;
+        border-radius: 50px;
+        text-decoration: none;
+        transition: all 0.3s;
+        font-weight: 500;
+    }
+    
+    .about-buttons a:hover {
+        background-color: #333;
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="about-container">
+    <!-- Profile Section -->
+    <section class="profile-section">
+        <div class="profile-image">
+            <div class="profile-img-about"></div>
+        </div>
+        <div class="bio-text">
+            <p class="lead">{{ data.about }}</p>
+            <p>I am passionate about leveraging technology to solve real-world problems and create impactful solutions. With a strong foundation in software engineering and machine learning, I strive to build applications that are not only functional but also user-friendly and visually appealing.</p>
+            <p>When I'm not coding, you can find me exploring new technologies, contributing to open-source projects, or expanding my knowledge through continuous learning.</p>
+        </div>
+    </section>
+    
+    <!-- Skills Section -->
+    <section>
+        <h2 class="section-title">Skills & Expertise</h2>
+        <div class="skills-grid">
+            <!-- Programming Languages -->
+            <div class="skill-card">
+                <div class="skill-header">
+                    <h4>Programming Languages</h4>
+                </div>
+                <div class="skill-body">
+                    <span class="skill-tag" style="background-color: #444;">Python</span>
+                    <span class="skill-tag" style="background-color: #444;">C</span>
+                    <span class="skill-tag" style="background-color: #444;">Java</span>
+                    <span class="skill-tag" style="background-color: #444;">SQL</span>
+                    <span class="skill-tag" style="background-color: #444;">JavaScript</span>
+                </div>
+            </div>
+            
+            <!-- Libraries & Frameworks -->
+            <div class="skill-card">
+                <div class="skill-header">
+                    <h4>Libraries & Frameworks</h4>
+                </div>
+                <div class="skill-body">
+                    <span class="skill-tag" style="background-color: #555;">NumPy</span>
+                    <span class="skill-tag" style="background-color: #555;">Pandas</span>
+                    <span class="skill-tag" style="background-color: #555;">TensorFlow</span>
+                    <span class="skill-tag" style="background-color: #555;">React.js</span>
+                    <span class="skill-tag" style="background-color: #555;">Flask</span>
+                </div>
+            </div>
+            
+            <!-- Tools & Software -->
+            <div class="skill-card">
+                <div class="skill-header">
+                    <h4>Tools & Software</h4>
+                </div>
+                <div class="skill-body">
+                    <span class="skill-tag" style="background-color: #666;">Git</span>
+                    <span class="skill-tag" style="background-color: #666;">VS Code</span>
+                    <span class="skill-tag" style="background-color: #666;">OpenCV</span>
+                    <span class="skill-tag" style="background-color: #666;">PyCharm</span>
+                </div>
+            </div>
+            
+            <!-- Technical Expertise -->
+            <div class="skill-card">
+                <div class="skill-header">
+                    <h4>Technical Expertise</h4>
+                </div>
+                <div class="skill-body">
+                    <span class="skill-tag" style="background-color: #777;">Machine Learning</span>
+                    <span class="skill-tag" style="background-color: #777;">Data Analysis</span>
+                    <span class="skill-tag" style="background-color: #777;">Web Development</span>
+                </div>
+            </div>
+            
+            <!-- Soft Skills -->
+            <div class="skill-card">
+                <div class="skill-header">
+                    <h4>Soft Skills</h4>
+                </div>
+                <div class="skill-body">
+                    <span class="skill-tag" style="background-color: #888;">Problem Solving</span>
+                    <span class="skill-tag" style="background-color: #888;">Critical Thinking</span>
+                    <span class="skill-tag" style="background-color: #888;">Team Collaboration</span>
+                </div>
+            </div>
+            
+            <!-- Certifications -->
+            <div class="skill-card">
+                <div class="skill-header">
+                    <h4>Certifications</h4>
+                </div>
+                <div class="skill-body">
+                    <ul class="cert-list">
+                        {% for cert in data.certifications %}
+                        <li>{{ cert }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Action Buttons -->
+    <div class="about-buttons">
+        <a href="/resume">View Resume</a>
+        <a href="/contact">Contact Me</a>
+    </div>
+</div>
+{% endblock %}

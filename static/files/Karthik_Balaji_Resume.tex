@@ -1,0 +1,184 @@
+%-------------------------
+% Resume in Latex
+% Author : Karthik Balaji B M
+%------------------------
+\documentclass[letterpaper,10pt]{article} 
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{fontawesome5}
+\usepackage{multicol}
+\setlength{\multicolsep}{-3.0pt}
+\setlength{\columnsep}{-1pt}
+\input{glyphtounicode}
+
+% Add fontspec for font customization
+\renewcommand{\rmdefault}{ptm} % Times New Roman font
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.75in}
+\addtolength{\evensidemargin}{-0.75in}
+\addtolength{\textwidth}{1.5in}
+\addtolength{\topmargin}{-0.75in}
+\addtolength{\textheight}{1.5in} % Adjusted height
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting with reduced spacing
+\titleformat{\section} {
+  \vspace{-4pt}\scshape\raggedright\large\bfseries % Reduced spacing here
+}{}{0em}{}[\color{black}\titlerule \vspace{-4pt}] % Reduced spacing here
+
+% Ensure that generated PDF is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}} % Reduced space after item
+  }
+}
+
+% Adjusted resumeSubheading command for date overflow
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-4pt}\item
+    \begin{tabular*}{1.0\textwidth}[t]{@{} p{0.7\textwidth} p{0.3\textwidth} @{}}
+      \textbf{#1} & \hfill \textbf{\small #2} \\
+      \textit{\small#3} & \hfill \textit{\small #4} \\
+    \end{tabular*}\vspace{-4pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{1.001\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & \textbf{\small #2}\\
+    \end{tabular*}\vspace{-4pt} % Reduced space after project heading
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-2pt}} % Reduced space after sub-item
+
+\renewcommand\labelitemi{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]
+  \setlength\itemsep{-1pt} % Reducing item spacing
+}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}\vspace{-5pt}} % Reduced space after subheading list
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-3pt}} % Reduced space after item list
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+    {\Huge \scshape Karthik Balaji B M} \\[5pt]
+    Chennai, Tamil Nadu, IN \\[5pt]
+    \small
+    \faPhone\ (+91) 6382481081 \quad
+    \href{mailto:karthikbalajibm@gmail.com}{\faEnvelope\ \textcolor{blue}{karthikbalajibm@gmail.com}} \quad
+    \href{https://www.linkedin.com/in/karthik-balaji-b-m/}{\faLinkedin\ \textcolor{blue}{linkedin.com/in/karthik-balaji-b-m}} \quad
+    \href{https://github.com/KarthikBalajiBM}{\faGithub\ \textcolor{blue}{github.com/KarthikBalajiBM}} \quad
+    
+\end{center}
+
+%-----------PROFILE SUMMARY-----------
+\section{Profile Summary}
+Passionate IT student with a strong background in designing secure systems and developing efficient algorithms. Proficient in Python, C, DBMS, and networking, I have a proven record of crafting innovative, data-driven projects that address real-world challenges. Committed to leveraging cutting-edge technologies to drive sustainable digital transformation and measurable impact.
+
+%-----------WORK EXPERIENCE-----------
+\section{Work Experience}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {Green Tamil Nadu Mission - Tamil Nadu Forest Department}{Apr 2023 -- May 2023}
+      {Website Data Management Intern}{Chennai, Tamil Nadu}
+    \begin{itemize}
+        \resumeItem{Created a comprehensive user manual for the web portal, enhancing usability and reducing user queries by 30\%.}
+        \resumeItem{Streamlined data sorting and formatting processes for the Agro-department, improving data processing speed.}
+        \resumeItem{Developed engaging infographics for presentations, boosting stakeholder engagement and communication clarity.}
+    \end{itemize}
+
+  \resumeSubHeadingListEnd
+
+  %-----------PROJECTS-----------
+\section{Projects and Publications}
+  \resumeSubHeadingListStart
+
+  \resumeProjectHeading
+    {\textbf{Senti-Meter: Emotion-Based Music Recommendation System} $|$ \emph{Python, OpenCV} \href{https://github.com/KarthikBalajiBM/Emotion-Based-Music-Recommendation}{\textcolor{blue}{\texttt{GitHub Link 
+ }}} \href{https://drive.google.com/file/d/15Oy2kY9MtW7kkV7J7X64ADf4C2jkO65v/view?usp=sharing}{\textcolor{blue}{\texttt{Publication Proof}}}}{Sep 2024}
+    \begin{itemize}
+        \resumeItem{Developed a real-time emotion-based music recommendation system, improving user engagement by 30\%. Achieved 92\% accuracy in emotion detection.}
+        \resumeItem{Built a responsive React.js frontend for real-time interaction, with a Flask backend for seamless data processing. Achieved high accuracy in emotion detection, supporting SDG goals for health, innovation, and sustainable communities.}
+        \resumeItem{Published work as `Real-Time Emotion-Based Music Recommendation System Using YOLOv5 and Spotify API`, contributing to personalized music and sustainable community development.}
+    \end{itemize}
+  \resumeProjectHeading
+    {\textbf{Know-the-Weather: Real-Time Weather Forecasting Web Application} $|$ \emph{React.js, OpenWeatherMap API, CSS} \href{https://github.com/KarthikBalajiBM/Know-the-weather}{\textcolor{blue}{\texttt{GitHub Link}}}}{Sep 2023}
+    \begin{itemize}
+        \resumeItem{Developed a responsive web application to fetch and display real-time weather information using the OpenWeatherMap API.}
+        \resumeItem{Built the frontend using React.js with reusable components and implemented efficient API handling.}
+        \resumeItem{Integrated environment variables for secure handling of API keys, ensuring scalability and security.}
+        \resumeItem{Enhanced user experience with responsive design, providing seamless functionality across devices.}
+    \end{itemize}
+
+    \resumeProjectHeading
+    {\textbf{Understanding AI Model Collapse: Causes, Impacts, and Solutions} \href{https://drive.google.com/file/d/15cRG8dtsq-iz2asS-Z8vOspGkYkj-ATr/view?usp=sharing}{\textcolor{blue}{\texttt{Publication Proof}}}}{ICSTSDG 2024}
+    \begin{itemize}
+        \resumeItem{Made a study on AI model collapse, including data challenges and biases. Proposed mitigation strategies to improvement in model stability.}
+    \end{itemize}
+
+  \resumeSubHeadingListEnd
+
+%-----------TECHNICAL SKILLS-----------
+\section*{Skills}
+
+\begin{itemize}
+    \item \textbf{Programming Languages \& Libraries:} Python, C, SQL, Java, NumPy, Pandas, Matplotlib
+    \item \textbf{Tools \& Software:} GitHub, VS Code, Figma, Colab, PyCharm
+    \item \textbf{Technical Expertise:} Data Structures and Algorithms, Object-Oriented Programming (OOPs)
+    \item \textbf{Soft Skills:} Solution-Oriented, Critical Thinking, Adaptability, Emotional Intelligence
+\end{itemize}
+
+%-----------EDUCATION-----------
+\section{Education}
+\resumeSubHeadingListStart
+  \resumeSubheading
+     {Sri Sairam Engineering College}{July 2021 -- Present}
+    {Bachelor of Technology in Information Technology (IT) 
+    \textbf{CGPA: 7.69}}{Chennai, Tamil Nadu}
+\resumeSubHeadingListEnd
+
+%-----------ACHIEVEMENTS-----------
+\section{Achievements \& Co-curricular}
+ \resumeSubHeadingListStart
+    \resumeItem{Awards: Received the \textbf{Elite Performer Award} for excellence in technical events, intercollegiate contests, and interviews \href{https://www.linkedin.com/posts/karthik-balaji-b-m_feeling-grateful-to-receive-the-elite-performer-activity-7313923056073068544-nBOW}{\textcolor{blue}{\texttt{LinkedIn Post}}}.}
+    \resumeItem{LeetCode: Solved over \textbf{400+} problems, strengthening DSA skills. \href{https://leetcode.com/u/Karthik_Balaji_B_M/}{\textcolor{blue}{LeetCode Profile}}.}
+    \resumeItem{Hackathons: Won the \textbf{Infoculture Fiesta} organized by NDLI Club with over 100+ participants \href{https://drive.google.com/file/d/1ZPVtIVBXEXQ9nZyLUgUh9fPpgyczOicy/view?usp=sharing}{\textcolor{blue}{\texttt{Certificate}}}.}
+    \resumeItem{Coding Contests: Secured top positions among 500+ participants in national symposiums \href{https://drive.google.com/drive/folders/1WUgGes_XiSqPRHACztV4bxDUYZcpKePp?usp=sharing}{\textcolor{blue}{\texttt{Certificate}}}.}
+    \resumeItem{Cybersecurity Contests: Competed in \textbf{Yukthi CTF 2024}, ranking among 150+ teams \href{https://drive.google.com/file/d/17W7xCYqn9pS5-ZXza5MmefWJbh4CEMXa/view?usp=sharing}{\textcolor{blue}{\texttt{Certificate}}}.}
+    \resumeItem{Design: Finalist in the \textbf{Can-fig Web Design Contest} \href{https://drive.google.com/file/d/1f53wPW92s0DuqOJ3FL21Rsep1SONEtKZ/view?usp=sharing}{\textcolor{blue}{\texttt{Certificate}}}.}
+    \resumeItem{Co-Curricular:}
+        \begin{itemize}
+            \resumeItem{\href{https://www.cloudskillsboost.google/public_profiles/158f35d6-a88b-422a-94fe-ecb604a2a08f/badges/4259476}{\textcolor{blue}{Google Intro to Large Language Models}}}
+            \resumeItem{\href{https://drive.google.com/file/d/1SeYYt4ejd1_y9R5SRhuc2eaYl_aJCxcm/view?usp=sharing}{\textcolor{blue}{IBM Python for Data Science}}}
+            \resumeItem{\href{https://drive.google.com/file/d/1F9WqX5ykQ-7mrIicxLhQsT36bq5n_GES/view?usp=sharing}{\textcolor{blue}{Cisco Introduction to Cybersecurity}}}
+        \end{itemize}
+ \resumeSubHeadingListEnd
+ \vspace{-10pt}
+
+\end{document}
