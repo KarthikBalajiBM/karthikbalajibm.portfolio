@@ -56,7 +56,7 @@
     width: auto;
     white-space: nowrap;
     overflow: hidden;
-    animation: pulse 2s infinite, textScroll 15s linear infinite;
+    animation: pulse 2s infinite, textScroll 20s linear infinite;
   }
   
   .availability-banner:hover,
@@ -69,10 +69,10 @@
   
   @keyframes textScroll {
     0% {
-      text-indent: 100%;
+      transform: translateX(100%);
     }
     100% {
-      text-indent: -100%;
+      transform: translateX(-100%);
     }
   }
   
