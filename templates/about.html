@@ -149,8 +149,64 @@
     
     .skill-tag:hover {
         transform: translateY(-3px);
-        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+        transition: transform 0.3s, box-shadow 0.3s;
         cursor: pointer;
+    }
+    
+    /* Experience section styling */
+    .experience-container {
+        margin-top: 2rem;
+    }
+    
+    .experience-card {
+        background-color: #fff;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        margin-bottom: 1.5rem;
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+    
+    .experience-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+    
+    .experience-header {
+        padding: 1.5rem;
+        background-color: #f8f8f8;
+        border-bottom: 1px solid #eee;
+    }
+    
+    .experience-header h3 {
+        margin: 0;
+        color: #333;
+        font-weight: 600;
+    }
+    
+    .experience-header h4 {
+        margin: 0.5rem 0 0 0;
+        color: #555;
+        font-weight: 500;
+    }
+    
+    .experience-duration {
+        color: #777;
+        font-style: italic;
+        margin: 0.5rem 0 0 0;
+    }
+    
+    .experience-body {
+        padding: 1.5rem;
+    }
+    
+    .key-skills {
+        margin-top: 1rem;
+    }
+    
+    .key-skills h5 {
+        margin-bottom: 0.5rem;
+        color: #444;
     }
     
     .section-title {
@@ -307,6 +363,32 @@
                     </ul>
                 </div>
             </div>
+        </div>
+    </section>
+    
+    <!-- Work Experience Section -->
+    <section>
+        <h2 class="section-title">Work Experience</h2>
+        <div class="experience-container">
+            {% for exp in data.experience %}
+            <div class="experience-card">
+                <div class="experience-header">
+                    <h3>{{ exp.title }}</h3>
+                    <h4>{{ exp.company }}</h4>
+                    <p class="experience-duration">{{ exp.duration }}</p>
+                </div>
+                <div class="experience-body">
+                    <p>{{ exp.description }}</p>
+                    <div class="key-skills">
+                        <h5>Key Skills:</h5>
+                        <span class="skill-tag" style="background-color: #555;">SQL</span>
+                        <span class="skill-tag" style="background-color: #555;">Microsoft Excel</span>
+
+                        <span class="skill-tag" style="background-color: #555;">Data Management</span>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
         </div>
     </section>
     
