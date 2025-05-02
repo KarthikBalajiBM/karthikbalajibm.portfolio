@@ -51,13 +51,29 @@
     font-weight: 500;
     font-size: 1.1rem;
     max-width: 90%;
-    animation: pulse 2s infinite;
     z-index: 10;
     border: 2px solid rgba(255,255,255,0.2);
     width: auto;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: pulse 2s infinite, textScroll 15s linear infinite;
+  }
+  
+  .availability-banner:hover,
+  .availability-banner:active,
+  .availability-banner:focus {
+    animation: pulse 2s infinite;
     white-space: normal;
     word-wrap: break-word;
-    display: inline-block;
+  }
+  
+  @keyframes textScroll {
+    0% {
+      text-indent: 100%;
+    }
+    100% {
+      text-indent: -100%;
+    }
   }
   
   @keyframes pulse {
