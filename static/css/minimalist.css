@@ -582,10 +582,14 @@ a:hover {
   
   /* Fix availability banner on mobile */
   .availability-banner {
-    width: 90%;
+    width: 85%;
     font-size: 0.9rem;
     padding: 12px 20px;
     bottom: 30px;
+    line-height: 1.4;
+    white-space: normal;
+    word-wrap: break-word;
+    display: inline-block;
   }
   
   /* Improve footer layout */
