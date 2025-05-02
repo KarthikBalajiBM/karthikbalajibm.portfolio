@@ -14,6 +14,7 @@
 .resume-section-content {
   max-width: 1000px;
   margin: 0 auto;
+  padding: 0 15px; /* Add padding for small screens */
 }
 
 /* Box styling for content sections */
@@ -260,6 +261,24 @@
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
+  /* Improve column layout on mobile */
+  .column-layout {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .column {
+    min-width: 100%;
+    max-width: 100%;
+  }
+  
+  /* Adjust content boxes for mobile */
+  .content-box {
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Fix contact cards layout */
   .contact-info {
     flex-direction: column;
     align-items: center;
@@ -267,6 +286,28 @@
   
   .contact-card {
     width: 100%;
-    max-width: 300px;
+    max-width: 250px;
+  }
+  
+  /* Improve form elements on mobile */
+  .form-group input,
+  .form-group textarea {
+    padding: 0.7rem;
+  }
+  
+  /* Fix timeline for mobile */
+  .timeline-item {
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Adjust project content */
+  .project-content {
+    padding: 1rem;
+  }
+  
+  /* Improve achievement and certification items */
+  .achievement-item,
+  .certification-item {
+    padding: 1.2rem;
   }
 }
