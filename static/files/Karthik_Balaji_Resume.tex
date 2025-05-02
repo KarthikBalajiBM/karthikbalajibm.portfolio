@@ -4,6 +4,8 @@
 %------------------------
 \documentclass[letterpaper,10pt]{article} 
 
+
+
 \usepackage{latexsym}
 \usepackage[empty]{fullpage}
 \usepackage{titlesec}
@@ -21,7 +23,22 @@
 \input{glyphtounicode}
 
 % Add fontspec for font customization
+% \renewcommand{\rmdefault}{phv} % Arial font
+% \renewcommand{\sfdefault}{phv}
 \renewcommand{\rmdefault}{ptm} % Times New Roman font
+
+% \documentclass{article}
+% \usepackage{times}
+% \documentclass{your_class_here}
+% \usepackage{mathptmx}
+
+
+% \begin{document}\nYour content here.
+% \end{document}
+
+
+% \usepackage{fontspec}
+% \setmainfont{Arial} % Set Arial as the main font
 
 % Adjust margins
 \addtolength{\oddsidemargin}{-0.75in}
@@ -79,8 +96,14 @@
 \newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
 \newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-3pt}} % Reduced space after item list
 
+
+% Your resume content goes here
+
+
 %-------------------------------------------
 %%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
 
 \begin{document}
 
@@ -90,15 +113,25 @@
     Chennai, Tamil Nadu, IN \\[5pt]
     \small
     \faPhone\ (+91) 6382481081 \quad
-    \href{mailto:karthikbalajibm@gmail.com}{\faEnvelope\ \textcolor{blue}{karthikbalajibm@gmail.com}} \quad
+    \href{mailto:karthikbalajibm21@gmail.com}{\faEnvelope\ \textcolor{blue}{karthikbalajibm21@gmail.com}} \quad
     \href{https://www.linkedin.com/in/karthik-balaji-b-m/}{\faLinkedin\ \textcolor{blue}{linkedin.com/in/karthik-balaji-b-m}} \quad
     \href{https://github.com/KarthikBalajiBM}{\faGithub\ \textcolor{blue}{github.com/KarthikBalajiBM}} \quad
+    \href{https://karthikbalajibm-portfolio.onrender.com/}{\faGlobe\ \textcolor{blue}{my-Portfolio}} \quad
+
     
 \end{center}
 
+
+
+
 %-----------PROFILE SUMMARY-----------
+
 \section{Profile Summary}
+  % Optional: Adjust space as needed
+
 Passionate IT student with a strong background in designing secure systems and developing efficient algorithms. Proficient in Python, C, DBMS, and networking, I have a proven record of crafting innovative, data-driven projects that address real-world challenges. Committed to leveraging cutting-edge technologies to drive sustainable digital transformation and measurable impact.
+
+
 
 %-----------WORK EXPERIENCE-----------
 \section{Work Experience}
@@ -111,6 +144,7 @@ Passionate IT student with a strong background in designing secure systems and d
         \resumeItem{Created a comprehensive user manual for the web portal, enhancing usability and reducing user queries by 30\%.}
         \resumeItem{Streamlined data sorting and formatting processes for the Agro-department, improving data processing speed.}
         \resumeItem{Developed engaging infographics for presentations, boosting stakeholder engagement and communication clarity.}
+
     \end{itemize}
 
   \resumeSubHeadingListEnd
@@ -125,6 +159,7 @@ Passionate IT student with a strong background in designing secure systems and d
     \begin{itemize}
         \resumeItem{Developed a real-time emotion-based music recommendation system, improving user engagement by 30\%. Achieved 92\% accuracy in emotion detection.}
         \resumeItem{Built a responsive React.js frontend for real-time interaction, with a Flask backend for seamless data processing. Achieved high accuracy in emotion detection, supporting SDG goals for health, innovation, and sustainable communities.}
+
         \resumeItem{Published work as `Real-Time Emotion-Based Music Recommendation System Using YOLOv5 and Spotify API`, contributing to personalized music and sustainable community development.}
     \end{itemize}
   \resumeProjectHeading
@@ -152,7 +187,9 @@ Passionate IT student with a strong background in designing secure systems and d
     \item \textbf{Tools \& Software:} GitHub, VS Code, Figma, Colab, PyCharm
     \item \textbf{Technical Expertise:} Data Structures and Algorithms, Object-Oriented Programming (OOPs)
     \item \textbf{Soft Skills:} Solution-Oriented, Critical Thinking, Adaptability, Emotional Intelligence
+    
 \end{itemize}
+
 
 %-----------EDUCATION-----------
 \section{Education}
@@ -163,11 +200,12 @@ Passionate IT student with a strong background in designing secure systems and d
     \textbf{CGPA: 7.69}}{Chennai, Tamil Nadu}
 \resumeSubHeadingListEnd
 
+
 %-----------ACHIEVEMENTS-----------
 \section{Achievements \& Co-curricular}
  \resumeSubHeadingListStart
     \resumeItem{Awards: Received the \textbf{Elite Performer Award} for excellence in technical events, intercollegiate contests, and interviews \href{https://www.linkedin.com/posts/karthik-balaji-b-m_feeling-grateful-to-receive-the-elite-performer-activity-7313923056073068544-nBOW}{\textcolor{blue}{\texttt{LinkedIn Post}}}.}
-    \resumeItem{LeetCode: Solved over \textbf{400+} problems, strengthening DSA skills. \href{https://leetcode.com/u/Karthik_Balaji_B_M/}{\textcolor{blue}{LeetCode Profile}}.}
+    \resumeItem{LeetCode: Solved over \textbf{500+} problems, strengthening DSA skills. \href{https://leetcode.com/u/Karthik_Balaji_B_M/}{\textcolor{blue}{LeetCode Profile}}.}
     \resumeItem{Hackathons: Won the \textbf{Infoculture Fiesta} organized by NDLI Club with over 100+ participants \href{https://drive.google.com/file/d/1ZPVtIVBXEXQ9nZyLUgUh9fPpgyczOicy/view?usp=sharing}{\textcolor{blue}{\texttt{Certificate}}}.}
     \resumeItem{Coding Contests: Secured top positions among 500+ participants in national symposiums \href{https://drive.google.com/drive/folders/1WUgGes_XiSqPRHACztV4bxDUYZcpKePp?usp=sharing}{\textcolor{blue}{\texttt{Certificate}}}.}
     \resumeItem{Cybersecurity Contests: Competed in \textbf{Yukthi CTF 2024}, ranking among 150+ teams \href{https://drive.google.com/file/d/17W7xCYqn9pS5-ZXza5MmefWJbh4CEMXa/view?usp=sharing}{\textcolor{blue}{\texttt{Certificate}}}.}
@@ -182,3 +220,5 @@ Passionate IT student with a strong background in designing secure systems and d
  \vspace{-10pt}
 
 \end{document}
+
+
