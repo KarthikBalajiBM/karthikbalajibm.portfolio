@@ -589,7 +589,7 @@ a:hover {
     line-height: 1.4;
     white-space: nowrap;
     overflow: hidden;
-    animation: pulse 2s infinite, textScroll 10s linear infinite;
+    animation: pulse 2s infinite, textScroll 20s linear infinite;
   }
   
   .availability-banner:hover,
@@ -613,10 +613,10 @@ a:hover {
   /* Text scrolling animation for mobile */
   @keyframes textScroll {
     0% {
-      text-indent: 100%;
+      transform: translateX(100%);
     }
     100% {
-      text-indent: -100%;
+      transform: translateX(-100%);
     }
   }
 }
