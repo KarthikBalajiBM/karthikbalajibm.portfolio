@@ -589,15 +589,15 @@ a:hover {
     line-height: 1.4;
     white-space: nowrap;
     overflow: hidden;
-    animation: pulse 2s infinite, textScroll 20s linear infinite;
+    animation: pulse 2s infinite;
+    display: flex;
+    justify-content: center;
   }
   
-  .availability-banner:hover,
-  .availability-banner:active,
-  .availability-banner:focus {
-    animation: pulse 2s infinite;
-    white-space: normal;
-    word-wrap: break-word;
+  .availability-banner-text {
+    display: inline-block;
+    padding-left: 100%;
+    animation: marquee 15s linear infinite;
   }
   
   /* Improve footer layout */
@@ -611,9 +611,9 @@ a:hover {
   }
   
   /* Text scrolling animation for mobile */
-  @keyframes textScroll {
+  @keyframes marquee {
     0% {
-      transform: translateX(100%);
+      transform: translateX(0);
     }
     100% {
       transform: translateX(-100%);
